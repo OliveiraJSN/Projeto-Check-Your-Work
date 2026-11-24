@@ -1,0 +1,17 @@
+{
+  "name": "check-your-work",
+  "version": "1.0.0",
+  "description": "Check Your Work — Corretor Automático (KodeTech)",
+  "scripts": {
+    "test": "vitest run",
+    "test:arquitetura": "vitest run test/arquitetura --reporter=verbose",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "archunit": "^2.5.5",
+    "typescript": "5.9",
+    "vitest": "^5.1.1"
+  },
+  "private": true
+}
