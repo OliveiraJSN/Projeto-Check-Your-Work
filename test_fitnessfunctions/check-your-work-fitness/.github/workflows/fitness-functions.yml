@@ -1,0 +1,22 @@
+name: Fitness Functions (FA15)
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  arquitetura:
+    name: Testes de arquitetura (ArchUnitTS)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: FA15 — Regras de camadas (veto no merge)
+        run: npm run test:arquitetura
